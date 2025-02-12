@@ -1,0 +1,90 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e1e2e, #3a3a5e);
+}
+
+.upload-btn {
+  position: relative;
+  width: 160px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px solid white;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.upload-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.upload-btn .text {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.upload-btn.shrinking .text {
+  opacity: 0;
+}
+
+.upload-btn.shrinking {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+    border-radius 0.3s ease-in-out;
+}
+
+.upload-btn.loading {
+  background: transparent;
+  border-style: dotted;
+  border-width: 6px;
+  border-color: white;
+  animation: spin 3s linear infinite;
+}
+
+.upload-btn.success {
+  background: #28a745;
+  border-color: #28a745;
+  animation: none;
+}
+
+.checkmark {
+  position: absolute;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  display: none;
+}
+
+.upload-btn.success .checkmark {
+  display: block;
+}
+
+.upload-btn.reset {
+  width: 160px;
+  height: 50px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
