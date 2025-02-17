@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:login_ui/const/colors.dart';
-import 'package:login_ui/screens/login_screen.dart';
 import 'package:login_ui/widgets/typing_widget.dart';
+import 'package:login_ui/screens/login_screen.dart';
+import 'package:login_ui/const/colors.dart';
+import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,24 +16,18 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 2), () {
-      setState(() {
-        isDone = true;
-      });
-
+    Future.delayed(const Duration(seconds: 1), () {
+      setState(() => isDone = true);
       Future.delayed(
-        const Duration(milliseconds: 1000),
+        const Duration(milliseconds: 400),
         () => setState(() => type = true),
       );
 
-      Future.delayed(const Duration(seconds: 3), () {
-        Future.delayed(
-          const Duration(milliseconds: 200),
-          () => setState(() => isDone = false),
-        );
-
+      Future.delayed(const Duration(seconds: 4), () {
+        setState(() => isDone = false);
         Future.delayed(const Duration(seconds: 1), () {
           if (!mounted) return;
+
           Navigator.of(
             context,
           ).pushReplacement(MaterialPageRoute(builder: (_) => LoginScreen()));
@@ -66,21 +60,20 @@ class _SplashScreenState extends State<SplashScreen> {
           AnimatedContainer(
             height: 80,
             width: 80,
-            duration: const Duration(milliseconds: 600),
+            duration: const Duration(milliseconds: 300),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
                 color: isDone ? Colors.white : primaryColor,
                 width: 8,
               ),
-              color: isDone ? primaryColor : Colors.white,
             ),
           ),
           Positioned(
             bottom: 30,
             child: AnimatedOpacity(
               opacity: type ? 1 : 0,
-              duration: const Duration(milliseconds: 300),
+              duration: const Duration(milliseconds: 400),
               child: type ? TypingAnimation(text: "Ovadey") : null,
             ),
           ),
