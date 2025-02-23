@@ -13,40 +13,6 @@ body {
   background: linear-gradient(135deg, #1a1a2e, #16213e);
 }
 
-.top-nav {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  padding: 15px 0;
-  position: relative;
-}
-
-.tag {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  animation: moveAround 5s infinite alternate ease-in-out;
-}
-
-.tag:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.tag:nth-child(2) {
-  animation-delay: 1s;
-}
-
-@keyframes moveAround {
-  0% {
-    transform: translateX(-10px) translateY(-5px);
-  }
-  100% {
-    transform: translateX(10px) translateY(5px);
-  }
-}
-
 .container {
   display: flex;
   gap: 10px;
