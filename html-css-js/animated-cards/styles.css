@@ -1,0 +1,161 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e, #16213e); /* Dark gradient */
+}
+
+.main-container {
+  width: 56.25vh; /* 9:16 aspect ratio */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Top Navigation */
+.top-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px 0;
+  position: relative;
+}
+
+.tag {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  animation: moveAround 5s infinite alternate ease-in-out;
+}
+
+.tag:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.tag:nth-child(2) {
+  animation-delay: 1s;
+}
+
+@keyframes moveAround {
+  0% {
+    transform: translateX(-10px) translateY(-5px);
+  }
+  100% {
+    transform: translateX(10px) translateY(5px);
+  }
+}
+
+/* Card Container */
+.container {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.card {
+  width: 150px;
+  height: 240px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out,
+    width 0.4s ease-in-out, height 0.4s ease-in-out, margin 0.4s ease-in-out;
+  transform: translateY(15px);
+  border: 2px solid white;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+.card .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.info h3,
+.info p {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease-in-out 0.2s, transform 0.4s ease-in-out 0.2s;
+}
+
+.card:hover {
+  width: 320px;
+  height: 270px;
+  z-index: 10;
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.3);
+  border-width: 3px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card:hover .info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover .info h3,
+.card:hover .info p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container:hover .card:not(:hover) {
+  transform: translateY(15px) scale(0.95);
+  filter: brightness(0.8);
+}
+
+.container:hover .card:not(:hover):hover {
+  transform: translateY(-10px) scale(1.05);
+  filter: brightness(1);
+}
+
+.card .info {
+  padding: 20px; /* Increased padding inside info */
+}
+
+.info h3 {
+  font-size: 1.4em; /* Slightly bigger */
+  font-weight: bold; /* Bolder text */
+  margin-bottom: 10px;
+}
+
+.info p {
+  font-size: 0.85em; /* Smaller text */
+}
