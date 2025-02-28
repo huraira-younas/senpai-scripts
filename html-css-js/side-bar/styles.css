@@ -1,0 +1,160 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2c2f38;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 60px;
+  height: 100vh;
+  background-color: #1e1e2f;
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+/* Expand Sidebar */
+.sidebar:hover {
+  width: 220px;
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Logo Icon */
+.logo i {
+  font-size: 26px;
+}
+
+/* Logo Text */
+.logo-text {
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s;
+}
+
+/* Show Logo Text on Expand */
+.sidebar:hover .logo-text {
+  opacity: 1;
+}
+
+/* Sidebar Menu */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* Sidebar Items */
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  color: #ddd;
+  border-radius: 6px;
+}
+
+/* Hover Effect */
+.menu li:hover {
+  background: linear-gradient(90deg, #3a3d4d, #505263);
+  transform: scale(1.02);
+  color: white;
+}
+
+/* Hide Text Initially */
+.text {
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+/* Show Text on Sidebar Expand */
+.sidebar:hover .text {
+  opacity: 1;
+}
+
+/* Parent Item */
+.parent {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Parent Header */
+.parent-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* Hover Effect */
+.parent-header:hover {
+  background: linear-gradient(90deg, #3a3d4d, #505263);
+}
+
+/* Arrow Icon */
+.arrow {
+  transition: transform 0.3s;
+}
+
+/* Submenu */
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s;
+}
+
+/* Submenu Items */
+.submenu li {
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s, transform 0.2s;
+  color: #bbb;
+  border-radius: 6px;
+}
+
+/* Hover Effect */
+.submenu li:hover {
+  background: linear-gradient(90deg, #40425a, #55576e);
+  transform: scale(1.02);
+  color: white;
+}
+
+/* Expand Submenu */
+.parent.active .submenu {
+  max-height: 150px;
+  padding-top: 5px;
+}
+
+/* Rotate Arrow */
+.parent.active .arrow {
+  transform: rotate(180deg);
+}
