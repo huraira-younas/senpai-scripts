@@ -1,160 +1,90 @@
-/* General Styles */
-body {
+* {
   margin: 0;
   padding: 0;
-  background-color: #2c2f38;
-  color: white;
-  font-family: Arial, sans-serif;
-  display: flex;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-
-/* Sidebar */
-.sidebar {
-  width: 60px;
+body {
+  display: flex;
   height: 100vh;
-  background-color: #1e1e2f;
-  transition: width 0.3s ease-in-out;
+  background: #030712;
+  color: #fff;
+}
+.sidebar {
+  width: 70px;
+  background: #1e2939;
+  padding: 10px;
+  transition: width 0.3s ease;
   overflow: hidden;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  padding-top: 10px;
+  position: relative;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.7);
+  border-right: 2px solid #233554;
 }
-
-/* Expand Sidebar */
 .sidebar:hover {
-  width: 220px;
+  width: 240px;
 }
-
-/* Logo Section */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 15px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* Logo Icon */
-.logo i {
-  font-size: 26px;
-}
-
-/* Logo Text */
-.logo-text {
-  opacity: 0;
-  white-space: nowrap;
-  transition: opacity 0.3s;
-}
-
-/* Show Logo Text on Expand */
-.sidebar:hover .logo-text {
-  opacity: 1;
-}
-
-/* Sidebar Menu */
 .menu {
   list-style: none;
   padding: 0;
-  margin: 0;
-  width: 100%;
 }
-
-/* Sidebar Items */
 .menu li {
+  padding: 15px;
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 12px 15px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-  color: #ddd;
-  border-radius: 6px;
+  border-radius: 8px;
+  transition: background 0.3s;
 }
-
-/* Hover Effect */
 .menu li:hover {
-  background: linear-gradient(90deg, #3a3d4d, #505263);
-  transform: scale(1.02);
-  color: white;
+  background: #64ffdb4a;
 }
-
-/* Hide Text Initially */
-.text {
+.menu li i {
+  font-size: 20px;
+  width: 20px;
+  text-align: center;
+  color: #64ffda;
+}
+.menu li .title {
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
   white-space: nowrap;
+  color: #fff;
   font-size: 16px;
 }
-
-/* Show Text on Sidebar Expand */
-.sidebar:hover .text {
+.sidebar:hover .menu li .title {
   opacity: 1;
 }
-
-/* Parent Item */
-.parent {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Parent Header */
-.parent-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  padding: 12px 15px;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-/* Hover Effect */
-.parent-header:hover {
-  background: linear-gradient(90deg, #3a3d4d, #505263);
-}
-
-/* Arrow Icon */
-.arrow {
-  transition: transform 0.3s;
-}
-
-/* Submenu */
-.submenu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.submenu-container {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s;
+  transition: max-height 0.4s ease-out;
 }
-
-/* Submenu Items */
+.submenu {
+  list-style: none;
+  padding-left: 40px;
+}
 .submenu li {
   padding: 12px 15px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  transition: background 0.3s, transform 0.2s;
-  color: #bbb;
+  gap: 12px;
+  cursor: pointer;
   border-radius: 6px;
+  transition: background 0.3s;
+  font-size: 14px;
 }
-
-/* Hover Effect */
+.submenu li i {
+  font-size: 15px;
+  width: 20px;
+  color: #64ffda;
+}
 .submenu li:hover {
-  background: linear-gradient(90deg, #40425a, #55576e);
-  transform: scale(1.02);
-  color: white;
+  background: #64ffdb4a;
 }
-
-/* Expand Submenu */
-.parent.active .submenu {
-  max-height: 150px;
-  padding-top: 5px;
+.submenu-container.active {
+  max-height: 160px;
 }
-
-/* Rotate Arrow */
-.parent.active .arrow {
-  transform: rotate(180deg);
+.sidebar:not(:hover) .submenu-container {
+  max-height: 0;
 }
