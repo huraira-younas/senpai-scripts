@@ -20,7 +20,7 @@ window.addEventListener("mousemove", (e) => {
 
 class Star {
   constructor() {
-    this.originX = Math.random() * canvas.width; // Store original position
+    this.originX = Math.random() * canvas.width;
     this.originY = Math.random() * canvas.height;
     this.x = this.originX;
     this.y = this.originY;
@@ -42,7 +42,6 @@ class Star {
       this.x += Math.cos(angle) * force * 3;
       this.y += Math.sin(angle) * force * 3;
     } else {
-      // Smooth return to origin when cursor is far
       this.x += (this.originX - this.x) * 0.02;
       this.y += (this.originY - this.y) * 0.02;
     }
@@ -82,10 +81,10 @@ class ShootingStar {
 
   reset() {
     this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height * 0.3; // Appear in upper sky
+    this.y = Math.random() * canvas.height * 0.3;
     this.length = Math.random() * 120 + 50;
     this.speed = Math.random() * 10 + 4;
-    this.angle = Math.PI / 4 + (Math.random() * 0.3 - 0.15); // More random angles
+    this.angle = Math.PI / 4 + (Math.random() * 0.3 - 0.15);
     this.opacity = 1;
     this.trail = [];
   }
@@ -94,7 +93,7 @@ class ShootingStar {
     this.trail.push({ x: this.x, y: this.y, opacity: this.opacity });
 
     if (this.trail.length > 10) {
-      this.trail.shift(); // Remove old trail points
+      this.trail.shift();
     }
 
     this.x += Math.cos(this.angle) * this.speed;
@@ -155,7 +154,6 @@ function animate() {
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Ambient Glow Effect
   let ambientGlow = ctx.createRadialGradient(
     canvas.width / 2,
     canvas.height / 2,
