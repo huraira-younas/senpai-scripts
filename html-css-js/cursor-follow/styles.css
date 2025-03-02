@@ -1,0 +1,189 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background */
+body {
+  background: black;
+  overflow: hidden;
+}
+
+/* Canvas (Stars) */
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Auth Container (Shared for Login & Sign-Up) */
+.auth-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Hidden Form */
+.hidden {
+  opacity: 0;
+  transform: translate(-50%, -40%);
+  pointer-events: none;
+}
+
+/* Titles & Subtitle */
+.auth-container h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+.subtitle {
+  font-size: 15px;
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+/* Input Groups */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 12px 0;
+  box-shadow: inset 2px 2px 8px rgba(255, 255, 255, 0.1),
+    inset -2px -2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-group i {
+  color: rgba(255, 255, 255, 0.7);
+  padding-right: 12px;
+  font-size: 16px;
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+}
+
+/* Forgot Password */
+.forgot-password {
+  text-align: right;
+  margin: 5px 0 15px;
+}
+
+.forgot-password a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.forgot-password a:hover {
+  color: white;
+}
+
+/* Login & Sign Up Button */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #ff9d6c, #ff6cab);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 107, 150, 0.5);
+}
+
+.login-button:hover {
+  box-shadow: 0 6px 20px rgba(255, 107, 150, 0.7);
+  transform: scale(1.02);
+}
+
+/* OR Divider */
+.or {
+  margin: 15px 0;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Social Login */
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-login button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+/* Google & Facebook Buttons */
+.google {
+  background: #db4437;
+  color: white;
+}
+.google:hover {
+  background: #c1351b;
+}
+
+.facebook {
+  background: #1877f2;
+  color: white;
+}
+.facebook:hover {
+  background: #1258a2;
+}
+
+/* Switch Form */
+.switch-form {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.switch-form a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.switch-form a:hover {
+  color: white;
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
