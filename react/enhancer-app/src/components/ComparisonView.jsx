@@ -21,6 +21,7 @@ const ComparisonView = ({ original, edited, editing }) => {
           <img
             src={edited}
             alt="Edited"
+            id="editor"
             className={`w-full h-auto rounded-lg border border-gray-600 ${
               editing ? "opacity-50" : ""
             }`}

@@ -23,7 +23,6 @@ function App() {
   const [redoStack, setRedoStack] = useState([]);
   const [loading, setLoading] = useState(false);
   const [history, setHistory] = useState([]);
-  const imgRef = useRef(null);
 
   const handleImageSelect = (file, url) => {
     setOriginalImage(file);

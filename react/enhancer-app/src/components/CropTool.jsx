@@ -1,35 +1,26 @@
-import { useRef, useEffect } from "react";
-import Cropper from "cropperjs";
+import { useRef } from "react";
+import Cropper from "react-cropper";
+import "cropperjs/dist/cropper.css";
 
 const CropTool = ({ imageSrc, onCrop }) => {
   const cropperRef = useRef(null);
-  const imgRef = useRef(null);
-
-  useEffect(() => {
-    if (imgRef.current) {
-      cropperRef.current = new Cropper(imgRef.current, {
-        aspectRatio: NaN,
-        autoCropArea: 1,
-        viewMode: 2,
-      });
-    }
-
-    return () => {
-      cropperRef.current?.destroy();
-    };
-  }, [imageSrc]);
-
   const cropImage = () => {
-    if (cropperRef.current) {
-      const croppedDataUrl = cropperRef.current.getCroppedCanvas().toDataURL();
-      onCrop(croppedDataUrl);
-    }
+    const cropper = cropperRef.current?.cropper;
+    onCrop(cropper.getCroppedCanvas().toDataURL());
   };
 
   return (
-    <div className="crop-container">
-      <img ref={imgRef} src={imageSrc} alt="Crop Preview" />
-      <button onClick={cropImage}>Crop</button>
+    <div>
+      <Cropper
+        style={{ height: 400, width: "100%" }}
+        initialAspectRatio={16 / 9}
+        ref={cropperRef}
+        src={imageSrc}
+        guides={false}
+      />
+      <button className="w-full m-6" onClick={cropImage}>
+        Crop
+      </button>
     </div>
   );
 };
