@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #374151;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #1f2937;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
