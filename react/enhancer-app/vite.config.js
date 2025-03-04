@@ -21,7 +21,7 @@ export default defineConfig({
         short_name: "Enhancer",
         description: "Enhancer",
         theme_color: "rgba(0, 0, 0, 0)",
-        background_color: "#ee5253",
+        background_color: "#1C1225",
         display: "standalone",
         start_url: ".",
         icons: [
