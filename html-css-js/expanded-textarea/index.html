@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      textarea::-webkit-scrollbar {
+        display: none;
+      }
+      textarea {
+        scrollbar-width: none;
+      }
+    </style>
+    <title>Auto Expand Textarea</title>
+  </head>
+  <body
+    class="flex bg-slate-900 text-white justify-center items-center min-h-screen bg-gray-100"
+  >
+    <textarea
+      id="autoExpand"
+      class="w-52 min-h-[20px] p-2 text-base border border-gray-300 bg-slate-800 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+      placeholder="Enter anything"
+    ></textarea>
+
+    <script>
+      document.addEventListener("input", function (event) {
+        if (event.target.id === "autoExpand") {
+          event.target.style.height = "auto";
+          event.target.style.height = event.target.scrollHeight + "px";
+        }
+      });
+    </script>
+  </body>
+</html>
