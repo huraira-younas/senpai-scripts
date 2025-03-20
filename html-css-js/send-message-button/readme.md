@@ -23,16 +23,13 @@ Click the thumbnail above to watch the demo on YouTube!
 
 ```bash
 # Clone the repo
-git clone https://github.com//yourrepo.git
+git clone https://github.com/huraira-younas/senpai-scripts/tree/master/html-css-js/send-message-button
 
 # Navigate into the directory
-cd yourrepo
+cd send-message-button
 
-# Install dependencies
-npm install # or yarn install
-
-# Run the app
-npm run dev # or yarn dev
+# Run Live
+run live-server
 ```
 
 ---
