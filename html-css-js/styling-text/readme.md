@@ -1,10 +1,10 @@
-# 🚀 Send Button
+# 🚀 Styling Text Loading
 
-> Click on the button and it will show a cool animation of sending message
+> cool animation of text loader
 
 ## 🎥 Video Preview
 
-[![Watch the Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](https://youtube.com/shorts/boUl6f5LzWA?feature=share)
+[![Watch the Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](https://youtube.com/shorts/TmCQANDQK9I?feature=share)
 
 Click the thumbnail above to watch the demo on YouTube!
 
@@ -23,10 +23,10 @@ Click the thumbnail above to watch the demo on YouTube!
 
 ```bash
 # Clone the repo
-git clone https://github.com/huraira-younas/senpai-scripts/tree/master/html-css-js/send-message-button
+git clone https://github.com/huraira-younas/senpai-scripts/tree/master/html-css-js/styling-text
 
 # Navigate into the directory
-cd send-message-button
+cd styling-text
 
 # Run Live
 run live-server

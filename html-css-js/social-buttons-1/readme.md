@@ -1,10 +1,10 @@
-# 🚀 Send Button
+# 🚀 Social Buttons
 
-> Click on the button and it will show a cool animation of sending message
+> Just like street lights it's the same, Cool Right? Check it
 
 ## 🎥 Video Preview
 
-[![Watch the Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](https://youtube.com/shorts/boUl6f5LzWA?feature=share)
+[![Watch the Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](https://youtube.com/shorts/XtNq258O7yI?feature=share)
 
 Click the thumbnail above to watch the demo on YouTube!
 
@@ -23,10 +23,10 @@ Click the thumbnail above to watch the demo on YouTube!
 
 ```bash
 # Clone the repo
-git clone https://github.com/huraira-younas/senpai-scripts/tree/master/html-css-js/send-message-button
+git clone https://github.com/huraira-younas/senpai-scripts/tree/master/html-css-js/social-buttons-1
 
 # Navigate into the directory
-cd send-message-button
+cd social-buttons-1
 
 # Run Live
 run live-server
